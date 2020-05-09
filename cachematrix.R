@@ -1,9 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-## Write a short comment describing this function
-## This is a function that creates a special matrix object that can cache its
-##inverse.
+## This function createst a list of functions to cache the inverse of a matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL
@@ -25,10 +21,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function tries to assign to i a cached inverse matrix, if it is null
+## meaning there is nothing saved, it will calculate the inverse using
+## solve(matrix)%%solve where %% is matrix multiplacation.
 
 cacheSolve <- function(x, ...) {
-        i <- x$getmean()
+        i <- x$getinverse()
         if(!is.null(i)){
                 message("getting chached data")
                 return(i)
